@@ -4,6 +4,7 @@ _build/
 # dotfiles
 .*
 !.gitignore
+atlassian-ide-plugin.xml
 # compiled python files
 *.py[co]
 # setup.py egg_info

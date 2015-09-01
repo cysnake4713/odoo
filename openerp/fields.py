@@ -1866,6 +1866,16 @@ class Id(Field):
     def __set__(self, record, value):
         raise TypeError("field 'id' cannot be assigned")
 
+
+class File(Field):
+    type = 'file'
+
+    def convert_to_cache(self, value, record, validate=True):
+        if value is None or value is False:
+            return False
+        return value
+
+
 # imported here to avoid dependency cycle issues
 from openerp import SUPERUSER_ID, registry
 from .exceptions import Warning, AccessError, MissingError

@@ -166,6 +166,7 @@ FIELDS_TO_PGTYPES = {
     fields.binary: 'bytea',
     fields.many2one: 'int4',
     fields.serialized: 'text',
+    fields.file: 'varchar',
 }
 
 def get_pg_type(f, type_override=None):

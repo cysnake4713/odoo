@@ -1848,13 +1848,16 @@ class file(_column):
         return fname
 
     def _symbol_get_file(self, val):
-        full_path = _full_path(val)
-        r = ''
-        try:
-            r = open(full_path, 'rb').read().encode('base64')
-        except IOError:
-            _logger.exception("_read_file reading %s", full_path)
-        return r
+        if val:
+            full_path = _full_path(val)
+            r = ''
+            try:
+                r = open(full_path, 'rb').read().encode('base64')
+            except IOError:
+                _logger.exception("_read_file reading %s", full_path)
+            return r
+        else:
+            return False
 
     _prefetch = False
     _type = 'file'

@@ -3,7 +3,9 @@ FROM cysnake4713/odoo8-base
 
 #-----add code and install ------------------------
 COPY . /opt/odoo/
+
 RUN pip install pysftp requests==2.6.0 validate_email pyDNS pillow==2.7.0 reportlab==3.1.44
+
 RUN pip install -e /opt/odoo
 #-------------------TODO:----------------------------------------
 #RUN wget -nv -O /opt/temp.zip https://github.com/cysnake4713/odoo/archive/9.0.docker.zip
@@ -26,5 +28,5 @@ ENV HOME $ODOO_HOME
 
 USER odoo
 
-CMD /opt/odoo/openerp-server -c /home/odoo/odoo.conf
+CMD /opt/odoo/openerp-gevent -c /home/odoo/odoo.conf
 

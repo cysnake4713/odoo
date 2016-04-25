@@ -9,6 +9,7 @@ RUN wget http://effbot.org/media/downloads/Imaging-1.1.7.tar.gz
 RUN tar xvfz Imaging-1.1.7.tar.gz
 RUN cd Imaging-1.1.7
 RUN python Imaging-1.1.7/setup.py install
+RUN apt-get install libjpeg-dev zlib1g-dev
 RUN pip install -e /opt/odoo
 #-------------------TODO:----------------------------------------
 #RUN wget -nv -O /opt/temp.zip https://github.com/cysnake4713/odoo/archive/9.0.docker.zip
